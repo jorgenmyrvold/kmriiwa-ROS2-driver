@@ -1,0 +1,36 @@
+connection_params:
+  ros__parameters:
+
+    connection_type: 'connection_type'
+    robot: 'robot'
+
+lbr_command_node:
+  ros__parameters:
+    id: 'lbr_id' # Robot ID
+    port: 'lbr_port'
+    KMR/ip: 'lbr_ip'
+
+kmp_command_node:
+  ros__parameters:
+    id: 'kmp_id' # Robot ID
+    port: 'kmp_port'
+    KMR/ip: 'kmp_ip'
+
+camera_node:
+  ros__parameters:
+    id: 'camera_id'
+    udp/ip: 'camera_udp_ip'
+
+#add Daniel
+
+kmp_odometry_node:
+  ros__parameters:
+    id: 'kmp_odom_id' # Robot ID
+    port: 'kmp_odom_port'
+    KMR/ip: 'kmp_odom_ip'
+
+kmp_laserscan_node:
+  ros__parameters:
+    id: 'kmp_laserscan_id' # Robot ID
+    port: 'kmp_laserscan_port'
+    KMR/ip: 'kmp_laserscan_ip'
