@@ -11,7 +11,7 @@ run_type=$3
 
 #edit Daniel
 kmp_port=30002
-kmp_laserscan_port=3003
+kmp_laserscan_port=30003
 kmp_odom_port=30004
 lbr_port=30005
 

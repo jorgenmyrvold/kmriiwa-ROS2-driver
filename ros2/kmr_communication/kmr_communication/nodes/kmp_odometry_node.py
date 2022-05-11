@@ -37,7 +37,6 @@ from sockets import TCPSocket, UDPSocket
 def cl_red(msge): return '\033[31m' + msge + '\033[0m'
 
 
-
 class KmpOdometryNode(Node):
     def __init__(self,connection_type,robot):
         super().__init__('kmp_odometry_node')
@@ -62,12 +61,12 @@ class KmpOdometryNode(Node):
         else:
             self.soc=None
 
-        if connection_type == 'TCP':
-            self.soc = TCPSocket(ip,port,self.name)
-        elif connection_type == 'UDP':
-            self.soc=UDPSocket(ip,port,self.name)
-        else:
-            self.soc=None
+#        if connection_type == 'TCP':
+#            self.soc = TCPSocket(ip,port,self.name)
+#        elif connection_type == 'UDP':
+#            self.soc=UDPSocket(ip,port,self.name)
+#        else:
+#            self.soc=None
 
         self.last_odom_timestamp = 0
         #end Daneil

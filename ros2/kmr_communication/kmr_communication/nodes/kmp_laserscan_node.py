@@ -34,12 +34,13 @@ from rclpy.qos import qos_profile_sensor_data
 from rclpy.utilities import remove_ros_args
 import argparse
 
-from script.tcpSocket import TCPSocket
-from script.udpSocket import UDPSocket
+#add Daniel
+from sockets import TCPSocket, UDPSocket
+#from script.tcpSocket import TCPSocket
+#from script.udpSocket import UDPSocket
 
 
 def cl_red(msge): return '\033[31m' + msge + '\033[0m'
-
 
 
 class KmpLaserScanNode(Node):
@@ -66,12 +67,12 @@ class KmpLaserScanNode(Node):
         else:
             self.soc=None
 
-        if connection_type == 'TCP':
-            self.soc = TCPSocket(ip,port,self.name)
-        elif connection_type == 'UDP':
-            self.soc=UDPSocket(ip,port,self.name)
-        else:
-            self.soc=None
+#        if connection_type == 'TCP':
+#            self.soc = TCPSocket(ip,port,self.name)
+#        elif connection_type == 'UDP':
+#            self.soc=UDPSocket(ip,port,self.name)
+#        else:
+#            self.soc=None
         #end Daniel
         self.last_scan_timestamp = 0
 
@@ -87,7 +88,7 @@ class KmpLaserScanNode(Node):
 
         while rclpy.ok() and self.soc.isconnected:
             if len(self.soc.laserScanB1):
-                self.scan_callback(self.pub_laserscan1, self.soc.laserScanB1.pop(0))
+                 self.scan_callback(self.pub_laserscan1, self.soc.laserScanB1.pop(0))
             if len(self.soc.laserScanB4):
                 self.scan_callback(self.pub_laserscan2, self.soc.laserScanB4.pop(0))
 

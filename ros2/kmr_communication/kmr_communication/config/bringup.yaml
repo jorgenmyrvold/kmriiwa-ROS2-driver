@@ -32,5 +32,5 @@ kmp_odometry_node:
 kmp_laserscan_node:
   ros__parameters:
     id: '1' # Robot ID
-    port: '3003'
+    port: '30003'
     KMR/ip: '172.31.1.69'

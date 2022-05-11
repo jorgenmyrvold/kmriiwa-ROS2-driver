@@ -56,16 +56,16 @@ def generate_launch_description(argv=sys.argv[1:]):
         #add Daniel
         Node(
             package=pkg_name,
-            executable='kmp',
+            executable='kmp_odometry',
             name='kmp_odometry_node',
             output='screen',
             emulate_tty=True,
             arguments=['-c', connection_type, '-ro', robot],
             parameters=[param_dir]
         ),
-         Node(
+        Node(
             package=pkg_name,
-            executable='kmp',
+            executable='kmp_laserscan',
             name='kmp_laserscan_node',
             output='screen',
             emulate_tty=True,
